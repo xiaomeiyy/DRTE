@@ -182,7 +182,7 @@ def test(args, encoder, decoder, test_loader, threshold, epoch):
 
             ### log for check performance   
             if batch_idx % args.log_interval == 0 and batch_idx != 0:
-                logger.info('Train Epoch: {}[{}/{} ({:.0f}%)]'.format( epoch, batch_idx * len(data), len(test_loader.dataset),100. * batch_idx / len(test_loader)))
+                logger.info('Val Epoch: {}[{}/{} ({:.0f}%)]'.format( epoch, batch_idx * len(data), len(test_loader.dataset),100. * batch_idx / len(test_loader)))
                 
     ### Caculate precision and print log
     prec, recall, _, _ = precision_recall_fscore_support(outputs,labels,average='macro')
